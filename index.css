@@ -28,6 +28,12 @@
       height: 120px;
       color: white;
       border-radius: 15px;
+      box-shadow: 0 0 0 #5C3B28;
+      transition: all 0.5s ease;
+    }
+    .game:hover {
+      box-shadow: 0 10px 0 #5C3B28;
+      transform: translate(0px, -5px);
     }
     .info {
       position: relative;

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Tic Tac Toe</title>
+  <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #DE9E44;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      width: 90vw;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .game {
+      width: 60vmin;
+      height: 60vmin;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5vmin;
+    }
+    .box {
+      width: 18vmin;
+      height: 18vmin;
+      border: none;
+      border-radius: 10px;
+      font-size: 8vmin;
+      font-family: Times New Roman;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      background-color: white;
+      color: black;
+    }
+    .reset {
+      margin-top: 20px;
+      background-color: #72462F;
+      color: white;
+      padding: 12px 30px;
+      border: 2px solid white;
+      border-radius: 10px;
+      font-size: 4vmin;
+      font-family: Times New Roman;
+      cursor: pointer;
+    }
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 100px) {
+      /* Phones */
+      .game {
+        width: 90vw;
+        height: 90vw;
+        gap: 1.5vmin;
+      }
+      .box {
+        width: 28vmin;
+        height: 28vmin;
+        font-size: 9vmin;
+      }
+      .reset {
+        font-size: 5vmin;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      /* Laptops & Desktops */
+      .container {
+        width: 50vw;
+        height: 60vh;
+      }
+      .game {
+        width: 50vmin;
+        height: 50vmin;
+      }
+      .box {
+        width: 15vmin;
+        height: 15vmin;
+        font-size: 6vmin;
+      }
+      .reset {
+        font-size: 3vmin;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="game">
+      <button class="box"></button>
+      <button class="box"></button>
+      <button class="box"></button>
+      <button class="box"></button>
+      <button class="box"></button>
+      <button class="box"></button>
+      <button class="box"></button>
+      <button class="box"></button>
+      <button class="box"></button>
+    </div>
+    <button class="reset">Restart</button>
+  </div>
+  <script>
+        let boxes = document.querySelectorAll(".box");
+    let reset = document.querySelector(".reset");
+    let newBtn = document.querySelector(".newbtn");
+
+    let turnX = true;
+
+    let winPatterns = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+
+    const resetGame = () => {
+      turnX = true;
+      enableBoxes();
+      msgContainer.classList.add("hide");
+    };
+
+    boxes.forEach((box) => {
+      box.addEventListener("click", () => {
+        if (turnX === true) {
+          box.innerText = "X";
+          turnX = false;
+        } else {
+          box.innerText = "O";
+          turnX = true;
+        }
+        box.disabled = true;
+
+        checkWinner();
+      });
+    });
+
+    const disableBoxes = () => {
+      for (let box of boxes) {
+        box.disabled = true;
+      }
+    };
+
+    const enableBoxes = () => {
+      for (let box of boxes) {
+        box.disabled = false;
+        box.innerText = "";
+      }
+    };
+
+    const showWinner = (winner) => {
+      localStorage.setItem("winner", winner); // Store winner in localStorage
+      window.location.href = "Winner.html"; // Redirect to winner page
+    };
+
+    const checkWinner = () => {
+      for (let pattern of winPatterns) {
+        let val1 = boxes[pattern[0]].innerText;
+        let val2 = boxes[pattern[1]].innerText;
+        let val3 = boxes[pattern[2]].innerText;
+
+        if (val1 != "" && val2 != "" && val3 != "") {
+          if (val1 === val2 && val2 === val3) {
+            showWinner(val1);
+          }
+        }
+      }
+    };
+
+    reset.addEventListener("click", resetGame);
+  </script>
+</body>
+</html>

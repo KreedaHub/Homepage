@@ -1,0 +1,47 @@
+    * {
+      margin: 0;
+      padding: 0;
+      border: border-box;
+    }
+    .head {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .logo {
+      width: 30%;
+      min-width: 300px;
+    }
+    .game-img {
+      height: 100px;
+      border-radius: 10px;
+      margin: 10px;
+    }
+    .container {
+      width: 100%;
+    }
+    .game {
+      width: 80% auto;
+      background-color: #B06C49;
+      margin: 20px;
+      height: 120px;
+      color: white;
+      border-radius: 15px;
+    }
+    .info {
+      position: relative;
+      top: -110px;
+    }
+    .game-name {
+      margin-left: 120px;
+      margin-bottom: 10px;
+    }
+    .play {
+      background-color: #72462F;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 10px;
+      margin-left: 120px;
+    }

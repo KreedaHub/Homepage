@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>KreedaHub</title>
-  <link rel="stylesheet" href="index.css">
-  <link rel="icon" href="WebLogo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kreeda Hub</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="WebLogo.png">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <header>
-    <div class="head">
-    <img src="Logo.png" alt="KreedaHub" class="logo">
-  </div>
-  </header>
-  <main class="container">
-    <div class="game">
-        <img src="TTT.png" alt="Tic Tac Toe" class="game-img">
-        <div class="info">
-          <h1 class="game-name">Tic Tac Toe</h1>
-          <button class="play" onclick="window.location.href='Tic Tac Toe.html'"><b>Play</b></button>
-        </div>
+    <div class="loader-container" id="loader">
+    <div class="load"></div>
     </div>
-    <div class="game">
-        <img src="2048.png" alt="2048" class="game-img">
-        <div class="info">
-          <h1 class="game-name">2048</h1>
-          <button class="play" onclick="window.location.href='2048.html'"><b>Play</b></button>
+    <header>
+        <nav class="navbar">
+            <img src="Logo.png" alt="KreedaHub" class="slogo">
+            <a href="index.html">Home</a>
+            <a href="About.html">About Us</a>
+            <a href="Corf.html">Contact/Feedback</a>
+            <button class="htp" onclick="window.location.href='HTP.html'"><i class="material-icons help">help</i> Help</button>
+        </nav>
+        <div class="head">
+            <img src="Logo.png" alt="KreedaHub" class="logo">
         </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search..." class="search" oninput="searchGame()">
+            <div class="button">
+                <div class="outer">
+                    <div class="inner">
+                        <i class="material-icons icon">light_mode</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="container">
+        <div class="game">
+            <img src="TTT.png" alt="Tic Tac Toe" class="game-img">
+            <div class="info">
+                <h1 class="game-name">Tic Tac Toe</h1>
+                <button class="play" onclick="window.location.href='Tic Tac Toe.html'"><b>Play</b></button>
+            </div>
+        </div>
+        <div class="game">
+            <img src="2048.png" alt="2048" class="game-img">
+            <div class="info">
+                <h1 class="game-name">2048</h1>
+                <button class="play" onclick="window.location.href='2048.html'"><b>Play</b></button>
+            </div>
         </div>
     </main>
+    <script src="index.js"></script>
 </body>
 </html>

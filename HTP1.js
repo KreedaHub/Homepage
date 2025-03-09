@@ -1,8 +1,8 @@
-  document.addEventListener("DOMContentLoaded", function() {
+// Loader
+document.addEventListener("DOMContentLoaded", function() {
     document.querySelector(".loader-container").style.display = "flex";
 });
-  window.addEventListener("load", function() {
-    setTimeout(() => {
-        document.querySelector(".loader-container").style.display = "none";
-    }, 1000);
+
+window.addEventListener("load", function() {
+    document.querySelector(".loader-container").style.display = "none";
 });

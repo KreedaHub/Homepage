@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 55px;
+}
+.navbar {
+      height: 60px;
+      width: 100%;
+      color: black;
+      background: white;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      box-shadow: 0 0 5px #00000050;
+      display: flex;
+      justify-content: space-around;
+      font-family: Times New Roman;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      overflow: hidden;
+    }
+    .navbar-dark {
+      height: 60px;
+      width: 100%;
+      color: white;
+      background: #222;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      box-shadow: 0 0 5px #ffffff50;
+      display: flex;
+      justify-content: space-around;
+      font-family: Times New Roman;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      overflow: hidden;
+    }
+    .htp {
+      background: #bbb;
+      border: none;
+      color: white;
+      padding-right: 5px;
+      border-radius: 10px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .help {
+      scale: 0.7;
+    }
+    .slogo {
+      height: 100px;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+    }
+h1 {
+    color: #333;
+}
+.game-list {
+    list-style: none;
+    padding: 0;
+}
+
+.game-list li {
+    background: #DE9E44;
+    margin: 10px auto;
+    padding: 15px;
+    width: 80%;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.game-list li:hover {
+    background: #72462F;
+}
+
+.game-list li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: block;
+}
+
+/* Loader Animation */
+.loader-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .load {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      border-top: 5px solid #72462F;
+      border-left: 5px solid #DE9E44;
+      border-bottom: 5px solid #72462F;
+      border-right: 5px solid #DE9E44;
+      animation: spin 1s ease infinite normal;
+    }
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }

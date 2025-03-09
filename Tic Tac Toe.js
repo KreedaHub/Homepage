@@ -50,8 +50,8 @@
     };
 
     const showWinner = (winner) => {
-      localStorage.setItem("winner", winner); // Store winner in localStorage
-      window.location.href = "Winner.html"; // Redirect to winner page
+      localStorage.setItem("winner", winner);
+      window.location.href = "Winner.html";
     };
 
     const checkWinner = () => {
@@ -69,3 +69,12 @@
     };
 
     reset.addEventListener("click", resetGame);
+    
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector(".loader-container").style.display = "flex";
+});
+  window.addEventListener("load", function() {
+    setTimeout(() => {
+        document.querySelector(".loader-container").style.display = "none";
+    }, 1000);
+});
